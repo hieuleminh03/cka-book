@@ -1,0 +1,43 @@
+---
+layout: base
+---
+
+    
+            {{ content }} <!-- This is where your page content will be injected -->
+            
+            {% unless page.is_intro %}
+            {% if page.answers_link %}
+            <div class="answers">
+                <a href="{{ page.answers_link }}" target="_blank">Mở trang đáp án</a>
+            </div>
+            {% endif %}
+            {% endunless %}
+
+            <div class="book-info">
+                <p>Bạn có thích nội dung đang đọc? Hãy cân nhắc:</p>
+                
+                {% include buy-info.html %}
+                
+                <br/>
+                <p>Bạn gặp vấn đề hoặc muốn góp ý điều gì?</p>
+                <p><a href="https://github.com/hieuleminh03/cka-book/issues" target="_blank">Báo lỗi cho sách</a></p>
+                <p><a href="https://github.com/hieuleminh03" target="_blank">Theo dõi tác giả trên GitHub</a></p>
+            </div>
+
+            <div class="linkbox">
+                <div class="previous">
+                    {% if page.previous_link and page.previous_title %}
+                        <a href="{{ page.previous_link }}">{{ page.previous_title }}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+                <div class="next">
+                    {% if page.next_link and page.next_title %}
+                        <a href="{{ page.next_link }}">{{ page.next_title }}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </div>
+                <div style="clear:both;"></div>
+            </div>
